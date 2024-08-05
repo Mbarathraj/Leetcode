@@ -1,9 +1,9 @@
 class Solution {
     public boolean isAcronym(List<String> words, String s) {
-        String str="";
+        StringBuilder str=new StringBuilder();
         for(String word:words){
-            str+=word.charAt(0);
+            str.append(word.charAt(0));
         }
-        return s.equals(str);
+        return s.equals(str.toString());
     }
 }
