@@ -3,7 +3,6 @@ class Solution {
         String str="abcdefghijklmnopqrstuvwxyz";
         String res="";
         key=key.replace(" ","");
-        System.out.println(key);
         HashSet<Character> set=new LinkedHashSet<>();
         for(char c:key.toCharArray()){
             set.add(c);
