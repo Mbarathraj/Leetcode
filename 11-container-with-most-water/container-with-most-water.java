@@ -6,8 +6,8 @@ class Solution {
             int min=Math.min(h[i],h[j]);
             int diff=j-i;
             max=Math.max(max,min*diff);
-            if(min==h[i]) i++;
-            else j--;
+            while(i < j && h[i] <= min) i++;
+            while(i < j && h[j] <= min) j--;
         }
         return max;
     }
