@@ -1,23 +1,16 @@
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
-        if (nums.length < k) {
-            throw new IllegalArgumentException("Array length is less than the subarray length k");
+        int l=0;
+        int sum=0;
+        for(int r=0;r<k;r++){
+            sum+=nums[r];
         }
-
-        double maxAverage = Double.NEGATIVE_INFINITY;
-        int start = 0, end = 0;
-        int sum = 0;
-
-        while (end < nums.length) {
-            sum += nums[end];
-            end++;
-            // Check if the window size is exactly k
-            if (end - start == k) {
-                maxAverage = Math.max(maxAverage, (double) sum / k);
-                sum -= nums[start];
-                start++;
-            }
+        int max=sum;
+        for(int r=k;r<nums.length;r++){
+            sum+=nums[r]-nums[l];
+            max=Math.max(sum,max);
+            l++;
         }
-        return maxAverage;
+        return (double)max/k;
     }
 }
