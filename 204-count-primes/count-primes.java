@@ -4,9 +4,7 @@ class Solution {
 
         // Create a boolean array "isPrime" and initialize all entries as true.
         boolean[] isPrime = new boolean[n];
-        for (int i = 2; i < n; i++) {
-            isPrime[i] = true;
-        }
+        Arrays.fill(isPrime,true);
 
         // Implement the Sieve of Eratosthenes algorithm
         for (int i = 2; i * i < n; i++) {
