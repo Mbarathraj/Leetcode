@@ -9,19 +9,20 @@
  * }
  */
 class Solution {
+    private static int [] a = new int[100000];
     public boolean isPalindrome(ListNode head) {
-        ListNode temp=head;
-        StringBuilder st=new StringBuilder();
-        while(temp!=null){
-            st.append(temp.val);
-            temp=temp.next;
-        }
-        int i=0,j=st.length()-1;
-        while(i<j){
-            if(st.charAt(i)!=st.charAt(j)) return false;
-            i++;j--;
-        }
-        return true;
-
+        if(head==null||head.next==null)return true;
+        final int[] arr = a;
+        int size = 0;
+       while(head!=null){
+        arr[size++]=head.val;
+        head=head.next;
+       }
+       int m = size/2;
+       for (int i = 0 ; i< m;i++){
+        if(arr[i]!=arr[--size]) return false;
+       }
+       return true;    
     }
+
 }
