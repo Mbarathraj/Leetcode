@@ -16,9 +16,12 @@ class Solution {
             st.append(temp.val);
             temp=temp.next;
         }
-        String str=st.toString();
-        st=st.reverse();
-        return str.equals(st.toString());
+        int i=0,j=st.length()-1;
+        while(i<j){
+            if(st.charAt(i)!=st.charAt(j)) return false;
+            i++;j--;
+        }
+        return true;
 
     }
 }
