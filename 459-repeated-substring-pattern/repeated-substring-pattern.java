@@ -8,6 +8,7 @@ class Solution {
                  if(s.substring(j,j+s1.length()).equals(s1)) c++;
                  else break;
                 }
+                else break;
             }
             if(s.length()/s1.length()==c+1 && c!=0 && s.length()%s1.length()==0) return true;
         }
