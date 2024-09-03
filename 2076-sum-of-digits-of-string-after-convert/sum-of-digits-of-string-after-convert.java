@@ -1,17 +1,18 @@
 class Solution {
     public int getLucky(String s, int k) {
-        String st="";
+        StringBuilder st=new StringBuilder();
         for(char c:s.toCharArray()){
-            st+=c-'a'+1;
+            st.append(c-'a'+1);
         }
         while(k>0){
             int sum=0;
-            for(char c:st.toCharArray()){
+            for(char c:st.toString().toCharArray()){
                 sum+=Integer.parseInt(""+c);
             }
-            st=""+sum;
+            st=new StringBuilder();
+            st.append(sum);
             k--;
         }
-        return Integer.parseInt(st);
+     return Integer.parseInt(st.toString());
     }
 }
