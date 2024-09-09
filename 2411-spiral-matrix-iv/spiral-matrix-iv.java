@@ -10,8 +10,9 @@
  */
 class Solution {
     public int[][] spiralMatrix(int m, int n, ListNode head) {
-        int a[][]=new int[m][n];
+        int a[][]=new int[m][];
         for(int i=0;i<m;i++){
+            a[i]=new int[n];
             Arrays.fill(a[i],-1);
         }
         int tr=0,br=m-1,lc=0,rc=n-1;
