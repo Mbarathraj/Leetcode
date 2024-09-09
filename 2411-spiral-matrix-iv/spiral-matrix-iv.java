@@ -16,26 +16,22 @@ class Solution {
         }
         int tr=0,br=m-1,lc=0,rc=n-1;
        while(head!=null){
-            for(int col=lc;col<=rc;col++){
-                if(head==null) break;
+            for(int col=lc;col<=rc &&  head!=null;col++){
                 a[tr][col]=head.val;
                 head=head.next;
             }
             tr++;
-            for(int row=tr;row<=br;row++){
-                if(head==null) break;
+            for(int row=tr;row<=br &&  head!=null;row++){
                 a[row][rc]=head.val;
                 head=head.next;
             }
             rc--;
-            for(int col=rc;col>=lc;col--){
-                if(head==null) break;
+            for(int col=rc;col>=lc && head!=null;col--){
                 a[br][col]=head.val;
                 head=head.next;
             }
             br--;
-            for(int row=br;row>=tr;row--){
-               if(head==null) break;
+            for(int row=br;row>=tr && head!=null;row--){
                 a[row][lc]=head.val;
                 head=head.next;
             }
