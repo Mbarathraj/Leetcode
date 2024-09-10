@@ -9,13 +9,16 @@
  * }
  */
 class Solution {
-    int gcd(int n1,int n2){
-        int min=Math.min(n1,n2);
-        while(min>1){
-            if(n1%min==0 && n2%min==0) return min;
-            min--;
+    int gcd(int a,int b){
+       if(a == 1 || b==1){
+            return 1;
         }
-        return 1;
+        while(b !=0){
+            int rem = a % b;
+            a = b;
+            b= rem;
+        }
+        return a;
     }
     public ListNode insertGreatestCommonDivisors(ListNode head) {
         ListNode temp=head.next,pre=head;
