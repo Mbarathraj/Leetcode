@@ -7,11 +7,14 @@ class Solution {
         int c1=0;
         for(int i=0;i<words.length;i++){
             boolean flag=true;
-            for(char c:words[i].toCharArray()){
-                if(!al.contains(c)){
+            int f=0,l=words[i].length()-1;
+            while(f<=l){
+                if(!al.contains(words[i].charAt(f)) || !al.contains(words[i].charAt(l))){
                     flag=false;
                     break;
                 }
+                f++;
+                l--;
             }
             if(flag) c1++;
         }
