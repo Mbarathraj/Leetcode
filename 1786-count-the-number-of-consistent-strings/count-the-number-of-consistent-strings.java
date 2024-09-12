@@ -1,23 +1,20 @@
 class Solution {
     public int countConsistentStrings(String allowed, String[] words) {
-        ArrayList<Character> al=new ArrayList<>();
+        int a[]=new int[26];
         for(char c:allowed.toCharArray()){
-            al.add(c);
+            a[c-'a']++;
         }
-        int c1=0;
-        for(int i=0;i<words.length;i++){
+        int count=0;
+        for(String word:words){
             boolean flag=true;
-            int f=0,l=words[i].length()-1;
-            while(f<=l){
-                if(!al.contains(words[i].charAt(f)) || !al.contains(words[i].charAt(l))){
+            for(char c:word.toCharArray()){
+                if(a[c-'a']==0){
                     flag=false;
                     break;
                 }
-                f++;
-                l--;
             }
-            if(flag) c1++;
+            if(flag==true) count++;
         }
-        return c1;
+        return count;
     }
 }
