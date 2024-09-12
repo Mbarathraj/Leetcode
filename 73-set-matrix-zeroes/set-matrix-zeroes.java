@@ -13,20 +13,19 @@ class Solution {
         for(ArrayList<Integer> li:al){
             int i=li.get(0),j=li.get(1);
             while(j>=0){
-                matrix[i][j]=0; j--;
+                matrix[i][j--]=0;
             }
             j=li.get(1);
             while(j<matrix[i].length){
-                matrix[i][j]=0; j++;
+                matrix[i][j++]=0;
             }
             j=li.get(1);
             while(i>=0){
-                matrix[i][j]=0;i--;
+                matrix[i--][j]=0;
             }
             i=li.get(0);
             while(i<matrix.length){
-                matrix[i][j]=0;
-                i++;
+                matrix[i++][j]=0;
             }
         }
         
