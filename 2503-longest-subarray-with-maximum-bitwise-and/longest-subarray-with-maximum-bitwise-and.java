@@ -1,27 +1,25 @@
 class Solution {
-    public int longestSubarray(int[] nums) {
-        int len = 1;
-
-        // Step 1: Find the maximum element in the array
-        int mx = Integer.MIN_VALUE;
-        for (int num : nums) {
-            mx = Math.max(mx, num);  // O(n)
+    public int longestSubarray(int[] a) {
+        int n=a.length;
+        int max=0;
+        int c=0,c1=0;
+        for(int i=0;i<n;i++)
+        {
+            if(max<a[i])
+            max=a[i];
         }
-
-        // Step 2: Find the longest subarray consisting of the maximum element
-        int tmp_len = 0;
-        for (int num : nums) {  // O(n)
-            if (num == mx) {
-                tmp_len++;
-            } else {
-                len = Math.max(len, tmp_len);
-                tmp_len = 0;
+        for(int i=0;i<n;i++)
+        {
+            if(max==a[i])
+            {
+                c1++;
+                c=Math.max(c,c1);
             }
+                else
+                c1=0;
+            
         }
-
-        // Update len in case the longest subarray is at the end
-        len = Math.max(len, tmp_len);
-
-        return len;
+        return c;
+        
     }
 }
