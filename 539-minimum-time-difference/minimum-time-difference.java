@@ -14,13 +14,11 @@ class Solution {
         for(int cur=0;cur<1440;cur++){
             if(a[cur]){
                 if(prev==-1) {
-                    prev=cur;
                     fValue=cur;
                 }
-                 else{
+                 else
                  m=Math.min(m,cur-prev);
-                 prev=cur;
-            }
+            prev=cur;
             }
         }
         if(prev!=-1) m=Math.min(m,1440 + fValue - prev);
