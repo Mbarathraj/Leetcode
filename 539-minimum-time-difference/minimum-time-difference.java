@@ -2,9 +2,9 @@ class Solution {
     public int findMinDifference(List<String> tp) {
         boolean a[]=new boolean[1440];
         for(String t:tp){
-            int h=Integer.parseInt(t.substring(0,2));
-            int min=Integer.parseInt(t.substring(3));
-            h=h*60+min;
+            int h=((t.charAt(0)-'0')*10+(t.charAt(1)-'0'))*60;
+            int min=(t.charAt(3)-'0')*10+t.charAt(4)-'0';
+            h=h+min;
             if(a[h]) return 0;
             a[h]=true;
         }
