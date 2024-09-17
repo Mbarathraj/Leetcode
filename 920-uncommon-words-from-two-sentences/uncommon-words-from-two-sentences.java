@@ -8,17 +8,10 @@ class Solution {
              map.put(st,map.getOrDefault(st,0)+1);
         }
         ArrayList<String> li=new ArrayList<>();
-        for(String st:s1.split(" ")){
-             if(map.get(st)==1) li.add(st);
-        }
-        for(String st:s2.split(" ")){
-             if(map.get(st)==1) li.add(st);
-        }
-        String []arr=new String[li.size()];
-        int c=0;
-        for(String st:li){
-            arr[c++]=st;
-        }
-        return arr;
+         for(String word:map.keySet()){
+            if(map.get(word)==1) li.add(word);
+         }
+         return li.toArray(new String[0]);
+       
     }
 }
