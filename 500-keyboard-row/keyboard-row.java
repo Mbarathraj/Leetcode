@@ -15,9 +15,11 @@ class Solution {
             else li.add(word);
             
         }
-            String[] arr = li.stream()
-                 .map(String::valueOf)
-                 .toArray(String[]::new);
+          String []arr=new String[li.size()];
+          int i=0;
+          for(String st:li){
+            arr[i++]=st;
+          }
 
           return arr;
     }
