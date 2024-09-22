@@ -1,14 +1,13 @@
 class Solution {
     public boolean checkTwoChessboards(String c1, String c2) {
-        boolean a[][]=new boolean[8][8];
-        boolean fl=false;
-        for(int i=0;i<8;i++){
-            for(int j=0;j<8;j++){
-                a[i][j]=fl;
-                fl=!fl;
-            }
-            fl=!fl;
-        }
-        return a[c1.charAt(0)-'a'][c1.charAt(1)-'0'-1]==a[c2.charAt(0)-'a'][c2.charAt(1)-'0'-1] ? true:false;
+        // Determine the color of the square for c1
+        boolean color1 = ((c1.charAt(0) - 'a') + (c1.charAt(1) - '1')) % 2 == 0;
+        
+        // Determine the color of the square for c2
+        boolean color2 = ((c2.charAt(0) - 'a') + (c2.charAt(1) - '1')) % 2 == 0;
+
+        // Return true if both colors are the same
+        return color1 == color2;
     }
 }
+
