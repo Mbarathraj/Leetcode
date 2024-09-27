@@ -13,7 +13,8 @@ class MyCalendar {
             if(c>1){
                 map.put(start,map.get(start)-1);
                 map.put(end,map.get(end)+1);
-              
+                if(map.get(start)==0) map.remove(start);
+                if(map.get(end)==0) map.remove(end);
                 return false;
             }
         }
