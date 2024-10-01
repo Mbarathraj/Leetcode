@@ -7,7 +7,7 @@ class Solution {
             int remainder = ((num % k) + k) % k; // Ensure positive remainder
             remainderCount[remainder]++;
         }
-
+        System.out.print(Arrays.toString(remainderCount));
         // Check for pairs
         for (int i = 1; i < (k + 1) / 2; i++) {
             if (remainderCount[i] != remainderCount[k - i]) {
