@@ -30,7 +30,7 @@ class Solution {
             TreeNode node=new TreeNode(val,null,null);
             return node;
         }
-        root.right = insert(val,root.right);
+         root.right = insert(val,root.right);
         return root;
     }
 }
