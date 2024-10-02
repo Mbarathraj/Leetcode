@@ -7,11 +7,7 @@ class Solution {
         int column = (int) Math.pow(2, height+1) - 1;
         
         for(int k=0; k<row; k++){
-            List<String> list = new ArrayList();
-            for(int i=0; i<column; i++){
-                list.add("");
-            }
-            res.add(list);
+          res.add(new ArrayList<>(Collections.nCopies(column, "")));
         }
         
         int left = 0;
