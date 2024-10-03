@@ -5,7 +5,7 @@ class Solution {
      for(int i:nums){
         sum+=i;
         if(sum==k) c++;
-        if(map.containsKey(sum-k)) c+=map.get(sum-k);
+        c+=map.getOrDefault(sum-k,0);
          map.put(sum,map.getOrDefault(sum,0)+1);
      }
      return c;
