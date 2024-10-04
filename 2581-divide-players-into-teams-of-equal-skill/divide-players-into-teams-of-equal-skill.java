@@ -22,11 +22,13 @@ class Solution {
         int target=sum/(n/2);
         long res=0;
         for(int s:skill){
+            if(a[s]==0) continue;
+            a[s]--;
             int in=target -s;
             if(a[in]==0) return -1;
             else res+=s*in;
             a[in]--;
         }
-        return res/2;
+        return res;
     }
 }
